@@ -8,7 +8,8 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
-import { Navbar1 } from "./component/navbar1"
+import { Navbar1 } from "./component/navbar1";
+import { Navbar2 } from "./component/navbar2";
 import { Footer } from "./component/footer";
 
 //create your first component
@@ -23,6 +24,7 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Navbar1 />
+					<Navbar2 />
 					<Switch>
 						<Route exact path="/">
 							<Home />
