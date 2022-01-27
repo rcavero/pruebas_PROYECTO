@@ -1,13 +1,14 @@
+import propTypes from "prop-types";
 import React from "react";
 
-export const Card = () => {
+export const Card = (props) => {
     return (
         <div className="container-fluid mt-3">
             <div className="card mb-3 w-50 m-auto">
-                <img src="https://lp-cms-production.imgix.net/2020-12/Bearfoot%20Theory_California_Joshua%20Tree_Sprinter%20Van_Interior%20Working2.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850&q=75&dpr=1" className="card-img-top" alt="..." />
+                <img src={props.picture} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title mb-3"><i class="fas fa-campground text-success"></i> NOMAD Place Camping</h5>
-                    <p className="card-text"><i class="fas fa-map-marker-alt text-danger"></i> Algún lugar del desierto, S/N / Valencia (España)</p>
+                    <h5 className="card-title mb-3"><i class="fas fa-campground text-success"></i> {props.title}</h5>
+                    <p className="card-text"><i class="fas fa-map-marker-alt text-danger"></i> {props.adress}</p>
                     <p className="card-text">Este es un lugar perfecto en medio del desierto en el que nadie te va a molestar y puedes pasar la noche tranquilamente. Espectaculares las vistas del amanecer mientras tomas un café.</p>
                     <div className="container-fluid d-flex justify-content-between ps-0 mb-3">
                         <div>
@@ -24,7 +25,7 @@ export const Card = () => {
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star text-secondary"></i>
                             </h5>
                         </div>
                     </div>
@@ -33,4 +34,9 @@ export const Card = () => {
             </div>
         </div>
     );
+    Card.propTypes = {
+        title: propTypes.string,
+        adress: propTypes.string,
+        picture: propTypes.string,
+    }
 }
